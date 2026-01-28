@@ -12,8 +12,13 @@ class MyApp extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text("Macdonal's",
-        style: TextStyle(fontSize: 20,
-        fontWeight: FontWeight.bold),),
+        style: TextStyle(fontSize: 30,
+        fontWeight: FontWeight.bold,
+        color: Colors.amber,
+        ),
+        ),
+        backgroundColor: const Color.fromARGB(255, 213, 21, 3),
+        
       ),
     );
   }
