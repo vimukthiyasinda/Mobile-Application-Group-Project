@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(MaterialApp(home: MyApp(),) );
+  runApp(MaterialApp(home: MyApp()));
 }
 
 class MyApp extends StatelessWidget {
@@ -9,6 +9,18 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(
+          "Macdonal's",
+          style: TextStyle(
+            fontSize: 30,
+            fontWeight: FontWeight.bold,
+            color: Colors.amber,
+          ),
+        ),
+        backgroundColor: const Color.fromARGB(255, 193, 101, 92),
+      ),
+    );
   }
 }
