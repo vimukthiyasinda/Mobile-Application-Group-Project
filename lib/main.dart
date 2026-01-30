@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'signup.dart'; // 👈 මෙන්න මේක අනිවාර්යයෙන්ම තියෙන්න ඕනේ
 
 void main() {
-  runApp(MaterialApp(home: MyApp()));
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -9,18 +10,9 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(
-          "Macdonal's",
-          style: TextStyle(
-            fontSize: 30,
-            fontWeight: FontWeight.bold,
-            color: Colors.amber,
-          ),
-        ),
-        backgroundColor: const Color.fromARGB(255, 193, 101, 92),
-      ),
+    return const MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: SignUpPage(), // 👈 මෙතනින් තමයි Sign Up පිටුවට යන්නේ
     );
   }
 }
