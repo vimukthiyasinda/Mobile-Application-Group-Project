@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'homepage.dart';
 
 void main() {
   runApp(MaterialApp(home: MyApp()));
@@ -116,7 +117,7 @@ class _loginPageState extends State<loginPage> {
                             child: Column(
                               children: [
                                 ElevatedButton(
-                                  onPressed: () {},
+                                  onPressed: (){Navigator.push(context, MaterialPageRoute(builder: (context)=> HomePage(),),);},
                                   style: ElevatedButton.styleFrom(
                                     backgroundColor: Colors.amber,
                                   ),
