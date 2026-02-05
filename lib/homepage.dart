@@ -16,7 +16,7 @@ class _homepageState extends State<homepage> {
         backgroundColor: const Color.fromARGB(255, 213, 21, 3),
         title: Padding(
           padding: const EdgeInsets.all(8.0),
-          child: Row(
+          child: Expanded(child: Row(
             mainAxisSize: MainAxisSize.min,
             children: [
               Image.asset('assets/dww.png'),
@@ -29,22 +29,26 @@ class _homepageState extends State<homepage> {
                   color: Colors.amber,
                 ),
               ),
+          
 
               SizedBox(width: 20),
-              Column(
-                children: [
-                  SizedBox(
-                    height: 40,
-                    child: SearchBar(
-                      hintText: "Search foods",
-                      leading: const Icon(Icons.search),
+              Expanded(
+                child: Column(
+                  children: [
+                    SizedBox(
+                      height: 40,
+                      child: SearchBar(
+                        hintText: "Search foods",
+                        leading: const Icon(Icons.search),
+                      ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
             ],
           ),
         ),
+      ),
       ),
       body: const FoodPage(),
 
@@ -86,7 +90,7 @@ class FoodPage extends StatefulWidget {
 class _FoodPageState extends State<FoodPage> {
   @override
   Widget build(BuildContext context) {
-    return Padding(
+    return SingleChildScrollView(
       padding: const EdgeInsets.all(10.0),
       child: Center(
         child: Column(
@@ -105,45 +109,46 @@ class _FoodPageState extends State<FoodPage> {
               ),
             ),
 
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Card(
-                  shadowColor: Colors.amber,
-                  elevation: 4,
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(30),
-                  ),
-                  child: SizedBox(
-                    width: 400,
-                    height: 200,
-                    child: ClipRRect(
-                      borderRadius: BorderRadius.circular(30),
-                      child: Image.asset("assets/ad.png", fit: BoxFit.cover),
-                    ),
-                  ),
-                ),
-
-                Card(
-                  shadowColor: Colors.amber,
-                  elevation: 4,
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(30),
-                  ),
-                  child: SizedBox(
-                    width: 400,
-                    height: 200,
-                    child: ClipRRect(
-                      borderRadius: BorderRadius.circular(30),
-                      child: Image.asset(
-                        "assets/delevery.jpeg",
-                        fit: BoxFit.cover,
+            SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              child: Expanded( child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Row(
+                    children: [
+                      SizedBox(
+                        width: 400,
+                        height: 200,
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.circular(30),
+                          child: Image.asset(
+                            "assets/ad.png",
+                            fit: BoxFit.cover,
+                          ),
+                        ),
                       ),
-                    ),
+                    ],
                   ),
-                ),
-              ],
+
+                  Row(
+                    children: [
+                      SizedBox(
+                        width: 400,
+                        height: 200,
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.circular(30),
+                          child: Image.asset(
+                            "assets/delevery.jpeg",
+                            fit: BoxFit.cover,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+              ),
             ),
 
             SizedBox(height: 5),
@@ -178,7 +183,7 @@ class _FoodPageState extends State<FoodPage> {
                   ),
                   child: SizedBox(
                     width: 200,
-                    height: 250,
+                    height: 265,
                     child: Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: Column(
@@ -221,7 +226,7 @@ class _FoodPageState extends State<FoodPage> {
 
                   child: SizedBox(
                     width: 200,
-                    height: 250,
+                    height: 265,
                     child: Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: Column(
@@ -262,7 +267,7 @@ class _FoodPageState extends State<FoodPage> {
                   ),
                   child: SizedBox(
                     width: 200,
-                    height: 250,
+                    height: 265,
                     child: Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: Column(
@@ -304,7 +309,7 @@ class _FoodPageState extends State<FoodPage> {
                   ),
                   child: SizedBox(
                     width: 200,
-                    height: 250,
+                    height: 265,
                     child: Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: Column(
@@ -352,7 +357,7 @@ class _FoodPageState extends State<FoodPage> {
                   ),
                   child: SizedBox(
                     width: 200,
-                    height: 250,
+                    height: 265,
                     child: Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: Column(
@@ -393,7 +398,7 @@ class _FoodPageState extends State<FoodPage> {
                   ),
                   child: SizedBox(
                     width: 200,
-                    height: 250,
+                    height: 265,
                     child: Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: Column(
@@ -435,7 +440,7 @@ class _FoodPageState extends State<FoodPage> {
                   ),
                   child: SizedBox(
                     width: 200,
-                    height: 250,
+                    height: 265,
                     child: Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: Column(
@@ -477,7 +482,7 @@ class _FoodPageState extends State<FoodPage> {
                   ),
                   child: SizedBox(
                     width: 200,
-                    height: 250,
+                    height: 265,
                     child: Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: Column(
@@ -525,7 +530,7 @@ class _FoodPageState extends State<FoodPage> {
                   ),
                   child: SizedBox(
                     width: 200,
-                    height: 250,
+                    height: 265,
                     child: Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: Column(
@@ -567,7 +572,7 @@ class _FoodPageState extends State<FoodPage> {
                   ),
                   child: SizedBox(
                     width: 200,
-                    height: 250,
+                    height: 265,
                     child: Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: Column(
@@ -611,7 +616,7 @@ class _FoodPageState extends State<FoodPage> {
                   ),
                   child: SizedBox(
                     width: 200,
-                    height: 250,
+                    height: 265,
                     child: Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: Column(
@@ -655,7 +660,7 @@ class _FoodPageState extends State<FoodPage> {
                   ),
                   child: SizedBox(
                     width: 200,
-                    height: 250,
+                    height: 265,
                     child: Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: Column(

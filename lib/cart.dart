@@ -52,12 +52,12 @@ class _cartpageState extends State<cartpage> {
         selectedItemColor: Colors.amber,
         unselectedItemColor: Colors.white,
         backgroundColor: const Color.fromARGB(255, 213, 21, 3),
-        currentIndex: 1, // Home selected
+        currentIndex: 1, // Cart selected
         onTap: (index) {
           if (index == 1) {
-            // Home → stay on same page
+            // Cart → stay on same page
           } else if (index == 0) {
-            // Cart → navigate to CartPage
+            // Homet → navigate to homepage
             Navigator.push(
               context,
               MaterialPageRoute(builder: (context) => const homepage()),
