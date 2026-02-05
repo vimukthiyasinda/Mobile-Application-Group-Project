@@ -94,6 +94,22 @@ class _FoodPageState extends State<FoodPage> {
                     ),
                   ),
                 ),
+
+                Card(
+                  shadowColor: Colors.amber,
+                  elevation: 4,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(30),
+                  ),
+                  child: SizedBox(
+                    width: 400,
+                    height: 200,
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(30),
+                      child: Image.asset("assets/delevery.jpeg", fit: BoxFit.cover),
+                    ),
+                  ),
+                ),
               ],
             ),
 
@@ -128,25 +144,21 @@ class _FoodPageState extends State<FoodPage> {
                     borderRadius: BorderRadius.circular(20),
                   ),
                   child: SizedBox(
-                    width: 180,
+                    width: 200,
                     height: 250,
                   child: Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: Column(
                       children: [
-                        Image.asset('assets/cheese.jpg', height: 100, width: 100),
-                        const Text("Cheese Burger",
+                        Image.asset('assets/BidMac.jpg', height: 100, width: 100),
+                        const Text("Big Mac",
                           style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold),
                         ),
-                        const Text("Delicious Cheese burger"),
-                        const Text("\Rs: 450.00",
+                        const Text("Delicious Big Mac Burger"),
+                        const Text("\Rs: 850.00",
                           style: TextStyle(color: Colors.orange),
                         ),
-                        const Icon(
-                          Icons.fastfood_rounded,
-                          size: 35,
-                          color: Colors.orange,
-                        ),
+                        
                         SizedBox(height: 5),
                         FilledButton(
                           onPressed: () {},
@@ -166,25 +178,21 @@ class _FoodPageState extends State<FoodPage> {
                   ),
 
                   child: SizedBox(
-                    width: 180, 
+                    width: 200, 
                     height: 250,
                     child: Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: Column(
                         children: [
-                          Image.asset('assets/cheese.jpg',height: 100,width: 100,),
-                          const Text("Cheese Burger",
+                          Image.asset('assets/McChickenSandwich.jpg',height: 100,width: 100,),
+                          const Text("Mc Chicken Sandwich",
                             style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold,),
                           ),
-                          const Text("Delicious Cheese burger"),
-                          const Text("\Rs: 450.00",
+                          const Text("Delicious Mc Chicken Sandwich burger"),
+                          const Text("\Rs: 800.00",
                             style: TextStyle(color: Colors.orange),
                           ),
-                          const Icon(
-                            Icons.fastfood_rounded,
-                            size: 35,
-                            color: Colors.orange,
-                          ),
+
                           SizedBox(height: 5),
                           FilledButton(
                             onPressed: () {},
@@ -202,25 +210,56 @@ class _FoodPageState extends State<FoodPage> {
                     borderRadius: BorderRadiusGeometry.circular(20),
                   ),
                   child: SizedBox(
-                    width: 180, // increase width
+                    width: 200, 
                     height: 250,
                   child: Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: Column(
                       children: [
-                        Image.asset('assets/images.jpeg',height: 100,width: 100,),
-                        const Text("Beef Burger",
+                        Image.asset('assets/DoubleCheeseburger.jpg',height: 100,width: 100,),
+                        const Text("Double Cheese Burger",
                           style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold,),
                         ),
-                        const Text("Delicious Beef burger"),
-                        const Text("\Rs: 450.00",
+                        const Text("Delicious Double Cheese Burger"),
+                        const Text("\Rs: 899.00",
                           style: TextStyle(color: Colors.orange),
                         ),
-                        const Icon(
-                          Icons.fastfood_rounded,
-                          size: 35,
-                          color: Colors.orange,
+                        
+                        SizedBox(height: 5),
+                        FilledButton(
+                          onPressed: () {},
+                          child: const Text("Click to Order!"),
                         ),
+                      ],
+                    ),
+                  ),
+                  ),
+                ),
+
+
+
+                Card(
+                  shadowColor: Colors.amber,
+                  elevation: 4,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadiusGeometry.circular(20),
+                  ),
+                  child: SizedBox(
+                    width: 200,
+                    height: 250,
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Column(
+                      children: [
+                        Image.asset('assets/BurgerMcDo.jpg',height: 100,width: 100,),
+                        const Text("Burger McDo",
+                          style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold,),
+                        ),
+                        const Text("Delicious Burger McDo"),
+                        const Text("\Rs: 750.00",
+                          style: TextStyle(color: Colors.orange),
+                        ),
+                        
                         SizedBox(height: 5),
                         FilledButton(
                           onPressed: () {},
@@ -233,36 +272,281 @@ class _FoodPageState extends State<FoodPage> {
                 ),
               ],
             ),
+SizedBox(height: 20,),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+               Card(
+                  shadowColor: Colors.amber,
+                  elevation: 4,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadiusGeometry.circular(20),
+                  ),
+                  child: SizedBox(
+                    width: 200, 
+                    height: 250,
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Column(
+                      children: [
+                        Image.asset('assets/COKE.jpg',height: 100,width: 100,),
+                        const Text("Coke",
+                          style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold,),
+                        ),
+                        const Text("ICE Coke"),
+                        const Text("\Rs: 250.00",
+                          style: TextStyle(color: Colors.orange),
+                        ),
+                        
+                        SizedBox(height: 5),
+                        FilledButton(
+                          onPressed: () {},
+                          child: const Text("Click to Order!"),
+                        ),
+                      ],
+                    ),
+                  ),
+                  ),
+                ),
+              Card(
+                  shadowColor: Colors.amber,
+                  elevation: 4,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadiusGeometry.circular(20),
+                  ),
+                  child: SizedBox(
+                    width: 200, 
+                    height: 250,
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Column(
+                      children: [
+                        Image.asset('assets/McFlurryOreoMondelez.jpg',height: 100,width: 100,),
+                        const Text("McFlurry with Oreo Cookies",
+                          style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold,),
+                        ),
+                        const Text("Delicious McFlurry with Oreo Cookies"),
+                        const Text("\Rs: 300.00",
+                          style: TextStyle(color: Colors.orange),
+                        ),
+                        
+                        SizedBox(height: 5),
+                        FilledButton(
+                          onPressed: () {},
+                          child: const Text("Click to Order!"),
+                        ),
+                      ],
+                    ),
+                  ),
+                  ),
+                ),
 
+                Card(
+                  shadowColor: Colors.amber,
+                  elevation: 4,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadiusGeometry.circular(20),
+                  ),
+                  child: SizedBox(
+                    width: 200,
+                    height: 250,
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Column(
+                      children: [
+                        Image.asset('assets/McFloatCoke.jpg',height: 100,width: 100,),
+                        const Text("Coke McFloat",
+                          style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold,),
+                        ),
+                        const Text("Delicious Coke McFloat"),
+                        const Text("\Rs: 450.00",
+                          style: TextStyle(color: Colors.orange),
+                        ),
+                        
+                        SizedBox(height: 5),
+                        FilledButton(
+                          onPressed: () {},
+                          child: const Text("Click to Order!"),
+                        ),
+                      ],
+                    ),
+                  ),
+                  ),
+                ),
+
+                Card(
+                  shadowColor: Colors.amber,
+                  elevation: 4,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadiusGeometry.circular(20),
+                  ),
+                  child: SizedBox(
+                    width: 200, 
+                    height: 250,
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Column(
+                      children: [
+                        Image.asset('assets/VanillaSundaeCone.jpg',height: 100,width: 100,),
+                        const Text("Vanilla Sundae Cone",
+                          style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold,),
+                        ),
+                        const Text("Delicious Vanilla Sundae Cone"),
+                        const Text("\Rs: 350.00",
+                          style: TextStyle(color: Colors.orange),
+                        ),
+                        
+                        SizedBox(height: 5),
+                        FilledButton(
+                          onPressed: () {},
+                          child: const Text("Click to Order!"),
+                        ),
+                      ],
+                    ),
+                  ),
+                  ),
+                ),
+              ],
+            ),
+SizedBox(height: 20,),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Card(
                   shadowColor: Colors.amber,
+                  elevation: 4,
                   shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadiusGeometry.circular(20),
+                    borderRadius: BorderRadiusGeometry.circular(20)
+                    ),
+                    child: SizedBox(
+                    width: 200, 
+                    height: 250,
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Column(
+                      children: [
+                        Image.asset('assets/FriesMedium.jpg',height: 100,width: 100,),
+                        const Text("Fries",
+                          style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold,),
+                        ),
+                        const Text("Delicious Fries Medium"),
+                        const Text("\Rs: 550.00",
+                          style: TextStyle(color: Colors.orange),
+                        ),
+                        
+                        SizedBox(height: 5),
+                        FilledButton(
+                          onPressed: () {},
+                          child: const Text("Click to Order!"),
+                        ),
+                      ],
+                    ),
                   ),
-                child: Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Column(
-                    children: [
-                      Image.asset('assets/chicken.jpeg', height: 100, width: 100),
-                      const Text("Chicken Bucket", style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
-                      const Text("Crispy chicken Bucket"),
-                      const Text("\Rs: 1000.00", style: TextStyle(color: Colors.orange)),
-                      const Icon(Icons.fastfood_rounded, size: 35, color: Colors.orange),
-                      SizedBox(height: 5,),
-                      FilledButton(
-                        onPressed: () {},
-                        child: const Text("Click to Order!"),
-                      ),
-                    ],
                   ),
                 ),
-              ),
+
+                Card(
+                  shadowColor: Colors.amber,
+                  elevation: 4,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadiusGeometry.circular(20)
+                    ),
+                    child: SizedBox(
+                    width: 200,
+                    height: 250,
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Column(
+                      children: [
+                        Image.asset('assets/1pcChickenMcDo_Plus_Spaghetti.jpg',height: 100,width: 100,),
+                        const Text("1pc. Chicken McDo with McSpaghetti",
+                          style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold,),
+                        ),
+                        const Text("Delicious 1pc. Chicken McDo with McSpaghetti"),
+                        const Text("\Rs: 950.00",
+                          style: TextStyle(color: Colors.orange),
+                        ),
+                        
+                        SizedBox(height: 5),
+                        FilledButton(
+                          onPressed: () {},
+                          child: const Text("Click to Order!"),
+                        ),
+                      ],
+                    ),
+                  ),
+                  ),
+                ),
+
+                Card(
+                  shadowColor: Colors.amber,
+                  elevation: 4,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadiusGeometry.circular(20)
+                    ),
+                    child: SizedBox(
+                    width: 200,
+                    height: 250,
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Column(
+                      children: [
+                        Image.asset('assets/6pcChickenNuggets_Plus_Fries.jpg',height: 100,width: 100,),
+                        const Text("6pc. Chicken McNuggets with Fries",
+                          style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold,),
+                        ),
+                        const Text("Delicious 6pc. Chicken McNuggets with Fries"),
+                        const Text("\Rs: 2500.00",
+                          style: TextStyle(color: Colors.orange),
+                        ),
+                        
+                        SizedBox(height: 5),
+                        FilledButton(
+                          onPressed: () {},
+                          child: const Text("Click to Order!"),
+                        ),
+                      ],
+                    ),
+                  ),
+                  ),
+                ),
+
+                Card(
+                  shadowColor: Colors.amber,
+                  elevation: 4,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadiusGeometry.circular(20)
+                    ),
+                    child: SizedBox(
+                    width: 200, 
+                    height: 250,
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Column(
+                      children: [
+                        Image.asset('assets/1pcChickenFillet_Plus_Rice.jpg',height: 100,width: 100,),
+                        const Text("Crispy Chicken Fillet with Rice",
+                          style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold,),
+                        ),
+                        const Text("Delicious Crispy Chicken Fillet with Rice"),
+                        const Text("\Rs: 1650.00",
+                          style: TextStyle(color: Colors.orange),
+                        ),
+                        
+                        SizedBox(height: 5),
+                        FilledButton(
+                          onPressed: () {},
+                          child: const Text("Click to Order!"),
+                        ),
+                      ],
+                    ),
+                  ),
+                  ),
+                )
               ],
-            )
+            ),
           ],
         ),
       ),
