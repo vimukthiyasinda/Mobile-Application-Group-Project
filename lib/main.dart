@@ -117,7 +117,7 @@ class _loginPageState extends State<loginPage> {
                             child: Column(
                               children: [
                                 ElevatedButton(
-                                  onPressed: (){Navigator.push(context, MaterialPageRoute(builder: (context)=> HomePage(),),);},
+                                  onPressed: (){Navigator.push(context, MaterialPageRoute(builder: (context)=> homepage(),),);},
                                   style: ElevatedButton.styleFrom(
                                     backgroundColor: Colors.amber,
                                   ),
