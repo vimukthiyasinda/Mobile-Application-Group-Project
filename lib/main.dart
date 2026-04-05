@@ -1,8 +1,17 @@
 import 'package:flutter/material.dart';
+import 'signup.dart';
 import 'homepage.dart';
+import 'package:supabase_flutter/supabase_flutter.dart';
 
-void main() {
-  runApp(MaterialApp(home: MyApp()));
+void main()async {  
+  WidgetsFlutterBinding.ensureInitialized();
+  await Supabase.initialize(
+    url: 'https://qbdbdyxsnswacernhktj.supabase.co',
+    anonKey: 'sb_publishable_x-Cn9XYsKKJkdufkcRdjpw_WCX0Pr1A',
+  );
+  runApp(MaterialApp(
+    home: MyApp())
+    );
 }
 
 class MyApp extends StatelessWidget {
@@ -47,6 +56,37 @@ class loginPage extends StatefulWidget {
 class _loginPageState extends State<loginPage> {
   TextEditingController UsernameController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
+final supabase = Supabase.instance.client;
+
+  Future<void> login() async {
+    final username = UsernameController.text.trim();
+    final password = passwordController.text.trim();
+
+    if (username.isEmpty || password.isEmpty) {
+      ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text("Please fill all fields")));
+      return;
+    }
+
+    try {
+      
+      final response = await supabase
+          .from('user')
+          .select()
+          .eq('name', username)
+          .eq('password', password)
+          .maybeSingle();
+
+      if (response != null) {
+        Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => const homepage()));
+      } else {
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(content: Text("User Name or Password is wrong please try again.")),
+        );
+      }
+    } catch (e) {
+      ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("Error: $e")));
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -117,7 +157,7 @@ class _loginPageState extends State<loginPage> {
                             child: Column(
                               children: [
                                 ElevatedButton(
-                                  onPressed: (){Navigator.push(context, MaterialPageRoute(builder: (context)=> homepage(),),);},
+                                  onPressed: login,
                                   style: ElevatedButton.styleFrom(
                                     backgroundColor: Colors.amber,
                                   ),
@@ -135,7 +175,7 @@ class _loginPageState extends State<loginPage> {
                                   children: [
                                     Text("Don't have an accont?"),
                                     TextButton(
-                                      onPressed: () {},
+                                      onPressed: () {Navigator.push(context, MaterialPageRoute(builder: (context)=> SignUpPage(),),);},
                                       child: Text(
                                         "Sign Up",
                                         style: TextStyle(

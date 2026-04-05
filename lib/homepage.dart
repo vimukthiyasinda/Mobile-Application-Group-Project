@@ -16,7 +16,7 @@ class _homepageState extends State<homepage> {
         backgroundColor: const Color.fromARGB(255, 213, 21, 3),
         title: Padding(
           padding: const EdgeInsets.all(8.0),
-          child: Expanded(child: Row(
+          child: Row(
             mainAxisSize: MainAxisSize.min,
             children: [
               Image.asset('assets/dww.png'),
@@ -29,7 +29,6 @@ class _homepageState extends State<homepage> {
                   color: Colors.amber,
                 ),
               ),
-          
 
               SizedBox(width: 20),
               Expanded(
@@ -49,7 +48,6 @@ class _homepageState extends State<homepage> {
           ),
         ),
       ),
-      ),
       body: const FoodPage(),
 
       bottomNavigationBar: BottomNavigationBar(
@@ -62,10 +60,10 @@ class _homepageState extends State<homepage> {
             // Home → stay on same page
           } else if (index == 1) {
             // Cart → navigate to CartPage
-            Navigator.push(
+           /* Navigator.push(
               context,
               MaterialPageRoute(builder: (context) => const cartpage()),
-            );
+            );*/
           }
         },
         items: const [
@@ -109,9 +107,8 @@ class _FoodPageState extends State<FoodPage> {
               ),
             ),
 
-            SingleChildScrollView(
-              scrollDirection: Axis.horizontal,
-              child: Expanded( child: Row(
+            Container(
+              child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -147,7 +144,6 @@ class _FoodPageState extends State<FoodPage> {
                     ],
                   ),
                 ],
-              ),
               ),
             ),
 
@@ -202,7 +198,7 @@ class _FoodPageState extends State<FoodPage> {
                           ),
                           const Text("Delicious Big Mac Burger"),
                           const Text(
-                            "\Rs: 850.00",
+                            "Rs: 850.00",
                             style: TextStyle(color: Colors.orange),
                           ),
 
@@ -245,7 +241,7 @@ class _FoodPageState extends State<FoodPage> {
                           ),
                           const Text("Delicious Mc Chicken Sandwich burger"),
                           const Text(
-                            "\Rs: 800.00",
+                            "Rs: 800.00",
                             style: TextStyle(color: Colors.orange),
                           ),
 
@@ -286,7 +282,7 @@ class _FoodPageState extends State<FoodPage> {
                           ),
                           const Text("Delicious Double Cheese Burger"),
                           const Text(
-                            "\Rs: 899.00",
+                            "Rs: 899.00",
                             style: TextStyle(color: Colors.orange),
                           ),
 
@@ -328,7 +324,7 @@ class _FoodPageState extends State<FoodPage> {
                           ),
                           const Text("Delicious Burger McDo"),
                           const Text(
-                            "\Rs: 750.00",
+                            "Rs: 750.00",
                             style: TextStyle(color: Colors.orange),
                           ),
 
@@ -376,7 +372,7 @@ class _FoodPageState extends State<FoodPage> {
                           ),
                           const Text("ICE Coke"),
                           const Text(
-                            "\Rs: 250.00",
+                            "Rs: 250.00",
                             style: TextStyle(color: Colors.orange),
                           ),
 
@@ -417,7 +413,7 @@ class _FoodPageState extends State<FoodPage> {
                           ),
                           const Text("Delicious McFlurry with Oreo Cookies"),
                           const Text(
-                            "\Rs: 300.00",
+                            "Rs: 300.00",
                             style: TextStyle(color: Colors.orange),
                           ),
 
@@ -459,7 +455,7 @@ class _FoodPageState extends State<FoodPage> {
                           ),
                           const Text("Delicious Coke McFloat"),
                           const Text(
-                            "\Rs: 450.00",
+                            "Rs: 450.00",
                             style: TextStyle(color: Colors.orange),
                           ),
 
@@ -501,7 +497,7 @@ class _FoodPageState extends State<FoodPage> {
                           ),
                           const Text("Delicious Vanilla Sundae Cone"),
                           const Text(
-                            "\Rs: 350.00",
+                            "Rs: 350.00",
                             style: TextStyle(color: Colors.orange),
                           ),
 
@@ -549,7 +545,7 @@ class _FoodPageState extends State<FoodPage> {
                           ),
                           const Text("Delicious Fries Medium"),
                           const Text(
-                            "\Rs: 550.00",
+                            "Rs: 550.00",
                             style: TextStyle(color: Colors.orange),
                           ),
 
@@ -593,7 +589,7 @@ class _FoodPageState extends State<FoodPage> {
                             "Delicious 1pc. Chicken McDo with McSpaghetti",
                           ),
                           const Text(
-                            "\Rs: 950.00",
+                            "Rs: 950.00",
                             style: TextStyle(color: Colors.orange),
                           ),
 
@@ -637,7 +633,7 @@ class _FoodPageState extends State<FoodPage> {
                             "Delicious 6pc. Chicken McNuggets with Fries",
                           ),
                           const Text(
-                            "\Rs: 2500.00",
+                            "Rs: 2500.00",
                             style: TextStyle(color: Colors.orange),
                           ),
 
@@ -681,7 +677,7 @@ class _FoodPageState extends State<FoodPage> {
                             "Delicious Crispy Chicken Fillet with Rice",
                           ),
                           const Text(
-                            "\Rs: 1650.00",
+                            "Rs: 1650.00",
                             style: TextStyle(color: Colors.orange),
                           ),
 

@@ -1,97 +1,145 @@
-import 'package:flutter/material.dart';
+/*import 'package:flutter/material.dart';
 import 'package:macdonalds/homepage.dart';
 
 class cartpage extends StatefulWidget {
-  const cartpage({super.key});
+  final List<Map<String, dynamic>> cartItems;
+
+  const cartpage({super.key, required this.cartItems});
 
   @override
   State<cartpage> createState() => _cartpageState();
 }
 
 class _cartpageState extends State<cartpage> {
+  late List<Map<String, dynamic>> items;
+
+  @override
+  void initState() {
+    super.initState();
+    items = widget.cartItems;
+  }
+
+  double getTotal() {
+    double total = 0;
+    for (var item in items) {
+      total += item['price'];
+    }
+    return total;
+  }
+
+  void removeItem(int index) {
+    setState(() {
+      items.removeAt(index);
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: const Color.fromARGB(255, 213, 21, 3),
-        title: Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: Row(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              Image.asset('assets/dww.png'),
-              const SizedBox(width: 10),
-              const Text(
-                "McDonald's",
-                style: TextStyle(
-                  fontSize: 22,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.amber,
-                ),
-              ),
+      
 
-              SizedBox(width: 20),
-              Column(
-                children: [
-                  SizedBox(
-                    height: 40,
-                    child: SearchBar(
-                      hintText: "Search foods",
-                      leading: const Icon(Icons.search),
-                    ),
+      body: Column(
+        children: [
+          Expanded(
+            child: items.isEmpty
+                ? const Center(child: Text("Cart is empty"))
+                : ListView.builder(
+                    itemCount: items.length,
+                    itemBuilder: (context, index) {
+                      return Card(
+                        margin: const EdgeInsets.all(10),
+                        child: ListTile(
+                          title: Text(items[index]['name']),
+                          trailing: Row(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              Text(
+                                "Rs: ${items[index]['price']}",
+                                style: const TextStyle(
+                                    fontWeight: FontWeight.bold),
+                              ),
+                              IconButton(
+                                icon: const Icon(Icons.delete,
+                                    color: Colors.red),
+                                onPressed: () => removeItem(index),
+                              ),
+                            ],
+                          ),
+                        ),
+                      );
+                    },
                   ),
-                ],
-              ),
-            ],
           ),
-        ),
+
+          // TOTAL + PAYMENT
+          Container(
+            padding: const EdgeInsets.all(15),
+            decoration: const BoxDecoration(
+              color: Colors.white,
+              boxShadow: [
+                BoxShadow(color: Colors.grey, blurRadius: 5)
+              ],
+            ),
+            child: Column(
+              children: [
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    const Text(
+                      "Total:",
+                      style: TextStyle(
+                          fontSize: 20, fontWeight: FontWeight.bold),
+                    ),
+                    Text(
+                      "Rs: ${getTotal()}",
+                      style: const TextStyle(
+                          fontSize: 20, color: Colors.orange),
+                    ),
+                  ],
+                ),
+                const SizedBox(height: 10),
+                ElevatedButton(
+                  onPressed: () {
+                    // Payment logic
+                  },
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.amber,
+                    minimumSize: const Size(double.infinity, 50),
+                  ),
+                  child: const Text(
+                    "Proceed to Payment",
+                    style: TextStyle(
+                        color: Colors.black,
+                        fontWeight: FontWeight.bold),
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ],
       ),
-      body: const CartBody(),
 
       bottomNavigationBar: BottomNavigationBar(
+        currentIndex: 1,
         selectedItemColor: Colors.amber,
         unselectedItemColor: Colors.white,
         backgroundColor: const Color.fromARGB(255, 213, 21, 3),
-        currentIndex: 1, // Cart selected
         onTap: (index) {
-          if (index == 1) {
-            // Cart → stay on same page
-          } else if (index == 0) {
-            // Homet → navigate to homepage
+          if (index == 0) {
             Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => const homepage()),
+              MaterialPageRoute(
+                builder: (context) => const homepage(),
+              ),
             );
           }
         },
         items: const [
           BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
           BottomNavigationBarItem(
-            icon: Icon(Icons.shopping_cart),
-            label: "Cart",
-          ),
+              icon: Icon(Icons.shopping_cart), label: "Cart"),
         ],
       ),
     );
   }
-}
-
-class CartBody extends StatefulWidget {
-  const CartBody({super.key});
-
-  @override
-  State<CartBody> createState() => _CartBodyState();
-}
-
-class _CartBodyState extends State<CartBody> {
-  @override
-  Widget build(BuildContext context) {
-    return Center(
-      child: Column(
-        children: [
-          Text("empty cart"),
-          ]
-        )
-      );
-  }
-}
+}*/
