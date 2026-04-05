@@ -1,7 +1,8 @@
-import 'package:flutter/material.dart';
+/*import 'package:flutter/material.dart';
+import 'signup.dart';
 
 void main() {
-  runApp(MaterialApp(home: MyApp(),) );
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -9,6 +10,30 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return const MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: SignUpPage(),
+    );
+  }
+}*/
+
+import 'package:flutter/material.dart';
+import 'homepage.dart';
+
+void main() {
+  runApp(const MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      title: "McDonald's App",
+      theme: ThemeData(primarySwatch: Colors.red),
+      home: const homepage(),
+    );
   }
 }
